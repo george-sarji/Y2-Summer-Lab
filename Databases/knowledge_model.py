@@ -21,3 +21,8 @@ class Knowledge(Base):
     title = Column(String)
     topic = Column(String)
     rating = Column(Integer)
+
+
+    def __repr__(self):
+        return "If you want to learn about " + self.topic + ", you should look at the Wikipedia article called " + self.title + ". We gave this article a " + str(self.rating) + " out of 10. "\
+               + ("Unfortunately, this article does not have a better rating. Maybe, this is an article that should be replaced soon!" if self.rating < 7 else "")
