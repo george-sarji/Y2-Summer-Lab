@@ -2,6 +2,7 @@ body {
     background-color: #75B9BE;
     color: #393D3F;
 }
+
 a {
     color: blue;
 }
@@ -17,7 +18,31 @@ a {
 
 #food {
     background-color: yellow;
-    font-family: 'Courier New', Courier, monospace; 
+    font-family: 'Courier New', Courier, monospace;
 }
 
+.sidebar {
+    background: linear-gradient(to right, aqua, aquamarine);
+    width: 190px;
+    height: 100%;
+}
 
+.title {
+    height: 60px;
+    width: 100%;
+    box-shadow: 5px 10px #888888;
+}
+
+.container {
+    position: relative;
+    height: 1000px;
+}
+
+.content, .sidebar {
+    position: absolute;
+    top: 0;
+}
+
+.content {
+    left: 200px;
+}
