@@ -1,6 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #75B9BE;
     color: #393D3F;
+    margin: 0;
 }
 
 a {
@@ -23,14 +28,16 @@ a {
 
 .sidebar {
     background: linear-gradient(to right, aqua, aquamarine);
-    width: 190px;
+    width: 180px;
     height: 100%;
+    padding: 10px;
 }
 
 .title {
     height: 60px;
     width: 100%;
     box-shadow: 5px 10px #888888;
+    border-bottom: 1px solid black;
 }
 
 .container {
@@ -45,4 +52,7 @@ a {
 
 .content {
     left: 200px;
+    border: 2px dotted red;
+    margin: 5px;
+    padding: 0px 15px 10px 15px;
 }
