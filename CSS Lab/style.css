@@ -2,3 +2,22 @@ body {
     background-color: #75B9BE;
     color: #393D3F;
 }
+a {
+    color: blue;
+}
+
+.vegetarian {
+    color: green;
+}
+
+.unknown {
+    color: red;
+    font-size: 15px;
+}
+
+#food {
+    background-color: yellow;
+    font-family: 'Courier New', Courier, monospace; 
+}
+
+
