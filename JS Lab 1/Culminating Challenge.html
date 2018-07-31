@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tic Tac Toe - Javascript</title>
+</head>
+
+<body>
+    <script>
+        // Tic tac toe code starts here
+        // Using a counter to alternate the turns within the game, using modulos two for the player number
+        // The game will use arrays in order to visualize the actual board during the game
+        // We will start with the first three, so basically up to the index of 2 is the first row, and so on
+        // The board will contain one of three numbers within the array - -1, 0 or 1. -1 is the starter that the actual 
+        // cell is not used, 0 is the first player and 1 is the first player.
+        var board = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
+        for (var turn = 0; turn < 9; turn++) {
+            if (turn % 2 == 0) {
+                // First player turn
+                var cell = parseInt(prompt("Player 1, enter your index (1-9):")) - 1;
+                while (cell < 0 || cell > 9 || board[cell] != -1) {
+                    cell = parseInt(prompt("Player 1, please re-enter a number between 1-9")) - 1;
+                }
+                board[cell] = 0;
+                alert(printBoard(board));
+                console.log(printBoard(board));
+                if (checkGame(board)) {
+                    alert("Player 1 won the game! Congratulations!");
+                    break;
+                }
+            }
+            else {
+                // Second player turn
+                var cell = parseInt(prompt("Player 2, enter your index (1-9):")) - 1;
+                while (cell < 0 || cell > 9 || board[cell] != -1) {
+                    cell = parseInt(prompt("Player 2, please re-enter a number between 1-9")) - 1;
+                }
+                board[cell] = 1;
+                alert(printBoard(board));
+                console.log(printBoard(board));
+                if (checkGame(board)) {
+                    alert("Player 2 won the game! Congratulations!");
+                    break;
+                }
+            }
+        }
+        if (turn == 9) alert("It's a tie, game over!");
+
+        function printBoard(array) {
+            var string = "";
+            // Print the board, row index are 0 1 2
+            for (var i = 0; i < 9; i++) {
+                if (i % 3 == 0) string += "\n";
+                switch (array[i]) {
+                    case -1: {
+                        string += " - ";
+                        break;
+                    }
+                    case 0: {
+                        string += " X ";
+                        break;
+                    }
+                    case 1: {
+                        string += " O ";
+                        break;
+                    }
+                }
+            }
+            return string;
+        }
+
+        function checkGame(array) {
+            // Check the diagonal lines (index 0, 4, 8) and (index 2, 4, 6)
+            if (array[0] != -1 && array[0] == array[4] && array[0] == array[8]) return true;
+            if (array[2] != -1 && array[2] == array[4] && array[2] == array[6]) return true;
+            // Check the rows
+            for (var row = 0; row < 3; row++) {
+                start = row * 3;
+                if (array[start] != -1 && array[start] == array[start + 1] && array[start] == array[start + 2]) return true;
+            }
+            // Check the columns
+            for (var col = 0; col < 3; col++) {
+                if (array[col] != -1 && array[col] == array[col + 3] && array[col] == array[col + 6]) return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>
