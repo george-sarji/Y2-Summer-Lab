@@ -9,16 +9,25 @@
     <h1>Guessing Game</h1>
 
     <script>
-/* STARTING CODE */
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * Math.floor(max - min)) + min;
-}
+        /* STARTING CODE */
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * Math.floor(max - min)) + min;
+        }
 
-var randomInt = getRandomInt(1, 100);
-/* END STARTING CODE */
+        var randomInt = getRandomInt(1, 100);
+        /* END STARTING CODE */
 
-// your code goes under here
-
+        // your code goes under here
+        var guess = parseInt(prompt("Guess a number between 1 and 100"));
+        while (guess !== randomInt) {
+            if (guess < randomInt) {
+                guess = parseInt(prompt("You guessed too low, try again!"));
+            }
+            else {
+                guess = parseInt(prompt("You guessed too high, try again."));
+            }
+        }
+        alert("Congratulations, you won a million virtual US dollars!");
     </script>
 </body>
 
