@@ -12,6 +12,10 @@
         // your code goes here
         var answers = prompt("What are your three favorite things about meet? Seperate each one with a comma.").split(",");
         document.write(answers.join(", "));
+
+        array = [4,10,23,26];
+        document.write(`${array} sorted using array.sort() is ${array.sort()}\n`);
+        document.write(`${array} sorted properly is ${array.sort((a,b) => a-b)}\n`);
     </script>
 </body>
 
