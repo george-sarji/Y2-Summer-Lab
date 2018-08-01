@@ -4,7 +4,7 @@ var me = {
     lastName: "Sarji",
     age: 17.8,
     favoriteFoods: ["Literally", "Everything"],
-    picture: "Not needed..."    
+    picture: "Not needed..."
 }
 
 
